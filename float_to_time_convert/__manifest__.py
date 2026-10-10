@@ -11,7 +11,7 @@
     'category': 'Tools',
     'author': 'Sarang T',
     'license': 'LGPL-3',
-    'images': ['static/description/icon.png'],
+    'images': ['static/description/time.png'],
     'depends': ['web'],
     'data': [
         'views/assets.xml',
