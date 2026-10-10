@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="float_to_time_convert.TimePicker">
+        <div class="o_fttc_picker">
+            <div class="o_fttc_step_title">Select hour</div>
+
+            <div class="o_fttc_clock_face o_fttc_hour_clock" role="group" aria-label="Select hour">
+                <span class="o_fttc_clock_center"></span>
+                <t t-foreach="hours" t-as="hour">
+                    <button type="button" class="o_fttc_clock_value o_fttc_hour" t-att-data-hour="hour" t-att-aria-label="hour">
+                        <t t-esc="hour"/>
+                    </button>
+                </t>
+            </div>
+
+            <div class="o_fttc_clock_face o_fttc_minute_clock o_fttc_hidden" role="group" aria-label="Select minute">
+                <span class="o_fttc_clock_center"></span>
+                <t t-foreach="minutes" t-as="minute">
+                    <button type="button" class="o_fttc_clock_value o_fttc_minute_value" t-att-data-minute="minute" t-att-aria-label="minute">
+                        <t t-if="minute % 5 === 0">
+                            <t t-esc="minute &lt; 10 ? '0' + minute : minute"/>
+                        </t>
+                        <t t-else="">•</t>
+                    </button>
+                </t>
+            </div>
+
+            <button type="button" class="btn btn-link o_fttc_back o_fttc_hidden">
+                <span class="fa fa-arrow-left" aria-hidden="true"></span>
+                Change hour
+            </button>
+
+            <div class="o_fttc_period_group">
+                <label>AM / PM</label>
+                <div class="btn-group o_fttc_period" role="group">
+                    <button type="button" class="btn btn-outline-primary o_fttc_period_button" data-period="AM">AM</button>
+                    <button type="button" class="btn btn-outline-primary o_fttc_period_button" data-period="PM">PM</button>
+                </div>
+            </div>
+
+            <div class="o_fttc_preview" aria-live="polite">
+                <span class="fa fa-clock-o" aria-hidden="true"></span>
+                <span class="o_fttc_preview_text"></span>
+            </div>
+        </div>
+    </t>
+</templates>

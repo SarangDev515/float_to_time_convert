@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="Float to Time Selector assets" inherit_id="web.assets_backend">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/float_to_time_convert/static/src/js/float_to_time_convert.js"/>
+            <link rel="stylesheet" type="text/css" href="/float_to_time_convert/static/src/css/float_to_time_convert.css"/>
+        </xpath>
+    </template>
+</odoo>
